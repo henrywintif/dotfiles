@@ -1,0 +1,17 @@
+# This repo is in the home directory because there are some scripts there
+# that we want to track. Because of that, we need a pretty aggressive
+# .gitignore, so that only the config files we want to track are tracked
+# and not everything else that might end up in my home directory
+
+# Ignore everything
+*
+
+# Except for...
+# this file
+!.gitignore
+# .config directory
+!.config
+# startup script for sway
+!sway-run
+# miscellaneous scripts
+!.scripts
