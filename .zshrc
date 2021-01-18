@@ -15,3 +15,19 @@ ZSH_THEME="robbyrussell"
 plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
+
+# This modifies the git_prompt_info script to only
+# run inside workspace subdirectories
+function git_prompt_info_wrapper() {
+	if [[ $PWD = */workspace/* ]];
+	then
+		git_prompt_info;
+	fi
+}
+
+# This is the robbyrussel PROMPT, but using our git prompt wrapper
+# We do this because our config is a git repo, and we don't want
+# our prompt to display the status of that config repo anytime we're
+# in our home directory
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info_wrapper)'
