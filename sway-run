@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export TERMINAL="termite"
+export BROWSER="firefox"
+
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+
+export MOZ_ENABLE_WAYLAND=1
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export GRIM_DEFAULT_DIR=~/screenshots
+
+sway
+sway_pid=$!
+
+wait $sway_pid
+pkill start_xob.sh
