@@ -9,9 +9,12 @@
 # Except for...
 # this file
 !.gitignore
-# .config directory
-!.config
 # startup script for sway
 !sway-run
-# miscellaneous scripts
+# my miscellaneous scripts
 !.scripts
+
+# un-ignore particular .config directories...
+!.config
+.config/*
+!.config/sway
