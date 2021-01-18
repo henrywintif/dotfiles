@@ -13,6 +13,8 @@
 !sway-run
 # my miscellaneous scripts
 !.scripts
+# my zsh config
+!.zshrc
 
 # un-ignore particular .config directories...
 !.config
