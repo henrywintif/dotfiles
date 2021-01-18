@@ -4,7 +4,7 @@
 # and not everything else that might end up in my home directory
 
 # Ignore everything
-*
+/*
 
 # Except for...
 # this file
