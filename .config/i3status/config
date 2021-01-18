@@ -1,0 +1,40 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "backlight"
+order += "volume_status"
+order += "wifi"
+order += "battery all"
+order += "battery_level"
+order += "sysdata"
+order += "tztime local"
+
+wifi {
+        format = "{ssid}"
+	bitrate_bad = 0
+	bitrate_degraded = 1
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+battery_level {
+	format = "{power}W"
+}
+
+sysdata {
+        format = "CPU: {cpu_used_percent}% : MEM: {mem_used_percent}%"
+}
+
+#memory {
+#        format = "%used | %available"
+#        threshold_degraded = "1G"
+#        format_degraded = "MEMORY < %available"
+#}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}

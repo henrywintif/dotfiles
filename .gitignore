@@ -19,3 +19,8 @@
 .config/*
 !.config/sway
 !.config/git
+!.config/termite
+!.config/i3status
+!.config/mako
+!.config/xob
+!.config/fontconfig
