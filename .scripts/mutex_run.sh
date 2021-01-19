@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# This script opens rofi if it isn't open, and closes it if it is.
+# This script evaluates the parameter passed once. If this script is run again with the same 
+# parameter, it closes the first instance
 
 my_command=$1
 
