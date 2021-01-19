@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # This script evaluates the parameter passed once. If this script is run again with the same 
-# parameter, it closes the first instance
+# parameter, it closes the first instance.
+#
+# Example usage with rofi: `./.scripts/mutex_run.sh "dmenu_path | rofi -show run"`
 
 my_command=$1
 
