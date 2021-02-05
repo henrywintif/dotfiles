@@ -20,41 +20,8 @@ set $menu '~/.scripts/mutex_run.sh "dmenu_path | rofi -show run"'
 output * bg ~/img/langtang-valley-with-lakes.jpg fill
 
 font C059 Medium 14
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-
-### Key bindings
+### Key bindings - Default Device
 #
 # Basics:
 #
@@ -213,6 +180,102 @@ bindsym XF86AudioMute exec ~/.scripts/toggle-mute.sh
 #
 bindsym $mod+BackSpace exec makoctl dismiss
 bindsym $mod+Shift+BackSpace exec makoctl dismiss --all
+
+### Key bindings - Keychron K4
+set $kcmod Mod1
+set $kcid 1452:591:Keychron_K4_Keyboard
+#
+# Basics:
+#
+    bindsym --input-device=$kcid $kcmod+Shift+Return exec $term
+    bindsym --input-device=$kcid $kcmod+Shift+q kill
+    bindsym --input-device=$kcid $kcmod+Return exec $menu
+    bindsym --input-device=$kcid F9 exec $menu
+    floating_modifier $kcmod normal
+    bindsym --input-device=$kcid $kcmod+Shift+c reload
+    bindsym --input-device=$kcid $kcmod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+    bindsym --input-device=$kcid $kcmod+Shift+e exec swaymsg exit
+#
+# Moving around:
+#
+    bindsym --input-device=$kcid $kcmod+$left focus left
+    bindsym --input-device=$kcid $kcmod+$down focus down
+    bindsym --input-device=$kcid $kcmod+$up focus up
+    bindsym --input-device=$kcid $kcmod+$right focus right
+    bindsym --input-device=$kcid $kcmod+Left focus left
+    bindsym --input-device=$kcid $kcmod+Down focus down
+    bindsym --input-device=$kcid $kcmod+Up focus up
+    bindsym --input-device=$kcid $kcmod+Right focus right
+    bindsym --input-device=$kcid $kcmod+Tab focus right
+    bindsym --input-device=$kcid $kcmod+Shift+Tab focus left
+    bindsym --input-device=$kcid $kcmod+Shift+$left move left
+    bindsym --input-device=$kcid $kcmod+Shift+$down move down
+    bindsym --input-device=$kcid $kcmod+Shift+$up move up
+    bindsym --input-device=$kcid $kcmod+Shift+$right move right
+    bindsym --input-device=$kcid $kcmod+Shift+Left move left
+    bindsym --input-device=$kcid $kcmod+Shift+Down move down
+    bindsym --input-device=$kcid $kcmod+Shift+Up move up
+    bindsym --input-device=$kcid $kcmod+Shift+Right move right
+#
+# Workspaces:
+#
+    bindsym --input-device=$kcid $kcmod+1 workspace number 1
+    bindsym --input-device=$kcid $kcmod+2 workspace number 2
+    bindsym --input-device=$kcid $kcmod+3 workspace number 3
+    bindsym --input-device=$kcid $kcmod+4 workspace number 4
+    bindsym --input-device=$kcid $kcmod+5 workspace number 5
+    bindsym --input-device=$kcid $kcmod+6 workspace number 6
+    bindsym --input-device=$kcid $kcmod+7 workspace number 7
+    bindsym --input-device=$kcid $kcmod+8 workspace number 8
+    bindsym --input-device=$kcid $kcmod+9 workspace number 9
+    bindsym --input-device=$kcid $kcmod+0 workspace number 10
+    bindsym --input-device=$kcid $kcmod+Shift+1 move container to workspace number 1
+    bindsym --input-device=$kcid $kcmod+Shift+2 move container to workspace number 2
+    bindsym --input-device=$kcid $kcmod+Shift+3 move container to workspace number 3
+    bindsym --input-device=$kcid $kcmod+Shift+4 move container to workspace number 4
+    bindsym --input-device=$kcid $kcmod+Shift+5 move container to workspace number 5
+    bindsym --input-device=$kcid $kcmod+Shift+6 move container to workspace number 6
+    bindsym --input-device=$kcid $kcmod+Shift+7 move container to workspace number 7
+    bindsym --input-device=$kcid $kcmod+Shift+8 move container to workspace number 8
+    bindsym --input-device=$kcid $kcmod+Shift+9 move container to workspace number 9
+    bindsym --input-device=$kcid $kcmod+Shift+0 move container to workspace number 10
+#
+# Layout stuff:
+#
+    bindsym --input-device=$kcid $kcmod+b splith
+    bindsym --input-device=$kcid $kcmod+v splitv
+    bindsym --input-device=$kcid $kcmod+s layout stacking
+    bindsym --input-device=$kcid $kcmod+w layout tabbed
+    bindsym --input-device=$kcid $kcmod+e layout toggle split
+    bindsym --input-device=$kcid $kcmod+f fullscreen
+    bindsym --input-device=$kcid $kcmod+Shift+space floating toggle
+    bindsym --input-device=$kcid $kcmod+space focus kcmode_toggle
+    bindsym --input-device=$kcid $kcmod+a focus parent
+    bindsym --input-device=$kcid $kcmod+Shift+a focus child
+#
+# Scratchpad:
+#
+    bindsym --input-device=$kcid $kcmod+Shift+minus move scratchpad
+    bindsym --input-device=$kcid $kcmod+minus scratchpad show
+#
+# Resizing containers:
+#
+    bindsym --input-device=$kcid $kcmod+r kcmode "resize"
+#
+# Brightness and Volume
+#
+    bindsym --input-device=$kcid XF86MonBrightnessUp exec (xbacklight -inc 5 && echo $(xbacklight -get) >> /tmp/xobpipe)
+    bindsym --input-device=$kcid XF86MonBrightnessDown exec (xbacklight -dec 5 && echo $(xbacklight -get) >> /tmp/xobpipe)
+    bindsym --input-device=$kcid XF86AudioRaiseVolume exec (ponymix unmute && ponymix increase 10 && echo $(ponymix get-volume) >> /tmp/xobpipe)
+    bindsym --input-device=$kcid XF86AudioLowerVolume exec (ponymix unmute && ponymix decrease 10 && echo $(ponymix get-volume) >> /tmp/xobpipe)
+    bindsym --input-device=$kcid XF86AudioMute exec ~/.scripts/toggle-mute.sh
+
+#
+# Notifications:
+#
+    bindsym --input-device=$kcid $kcmod+BackSpace exec makoctl dismiss
+    bindsym --input-device=$kcid $kcmod+Shift+BackSpace exec makoctl dismiss --all
+### END Keychron Specific hotkeys
 
 #
 # Status Bar:
