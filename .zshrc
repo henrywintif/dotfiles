@@ -31,3 +31,10 @@ function git_prompt_info_wrapper() {
 # in our home directory
 PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info_wrapper)'
+
+# Environment variables
+export WORKSPACE_DIR=$HOME/workspace
+export BUYERSIGHT_PACKAGES_DIR=$WORKSPACE_DIR
+
+# Aliases
+alias sudo='sudo '
