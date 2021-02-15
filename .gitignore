@@ -16,6 +16,8 @@
 # my zsh config
 !.zshrc
 
+!.vimrc
+
 # un-ignore particular .config directories...
 !.config
 .config/*
