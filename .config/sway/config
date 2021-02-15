@@ -14,10 +14,28 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu '~/.scripts/mutex_run.sh "dmenu_path | rofi -show run"'
+#set $menu '~/.scripts/mutex_run.sh "dmenu_path | wofi --show run"'
+set $menu 'dmenu_path | wofi --show run'
 
 ### Output configuration
-output * bg ~/img/langtang-valley-with-lakes.jpg fill
+output * bg ~/img/langtang_hires.jpeg fill
+
+#output eDP-1 mode 1920x1080@60Hz
+#output eDP-1 disable
+
+set $lenovo_display 'Lenovo Group Limited LEN L28u-30 U1B3NWVF'
+#output $lenovo_display enable
+#output $lenovo_display mode 3839x2160@60Hz
+#output $lenovo_display scale 0
+#xwayland force scale 1.5
+#output $lenovo_display adaptive_sync on
+
+set $dell_display 'Dell Inc. Dell S2716DG #ASPlgu/8gjbd'
+#output $dell_display enable
+#output $dell_display mode 2560x1440@144Hz
+#output $dell_display adaptive_sync on
+
+exec kanshi
 
 font C059 Medium 14
 
@@ -169,10 +187,11 @@ bindsym $mod+r mode "resize"
 #
 # Brightness and Volume
 #
-bindsym XF86MonBrightnessUp exec (xbacklight -inc 5 && echo $(xbacklight -get) >> /tmp/xobpipe)
-bindsym XF86MonBrightnessDown exec (xbacklight -dec 5 && echo $(xbacklight -get) >> /tmp/xobpipe)
-bindsym XF86AudioRaiseVolume exec (ponymix unmute && ponymix increase 10 && echo $(ponymix get-volume) >> /tmp/xobpipe)
-bindsym XF86AudioLowerVolume exec (ponymix unmute && ponymix decrease 10 && echo $(ponymix get-volume) >> /tmp/xobpipe)
+bindsym XF86MonBrightnessUp exec ~/.scripts/increase_brightness.sh 
+bindsym XF86MonBrightnessDown exec ~/.scripts/decrease_brightness.sh
+
+bindsym XF86AudioRaiseVolume exec (ponymix unmute && ponymix increase 10 && echo $(ponymix get-volume) >> /tmp/wobpipe)
+bindsym XF86AudioLowerVolume exec (ponymix unmute && ponymix decrease 10 && echo $(ponymix get-volume) >> /tmp/wobpipe)
 bindsym XF86AudioMute exec ~/.scripts/toggle-mute.sh
 
 #
@@ -203,8 +222,7 @@ bar {
 
 include /etc/sway/config.d/*
 
-exec ~/.scripts/start_xob.sh
-
+exec ~/.scripts/init_displays.sh
 
 #
 # Lock Screen
