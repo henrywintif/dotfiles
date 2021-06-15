@@ -29,15 +29,6 @@ def dependencies_met() -> int:
         return 1
     return 0
 
-
-def get_config_dirs() -> List[str]:
-    abspath = os.path.abspath(__file__)
-    dirname = os.path.dirname(abspath)
-    dirs = [filename for filename in os.listdir(dirname)
-            if os.path.isdir(os.path.join(dirname, filename)) and filename[0] != '.']
-    return dirs
-
-
 def install() -> int:
     os.chdir(os.path.expanduser('~'))
     """Change to home dir"""
