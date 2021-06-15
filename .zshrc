@@ -40,3 +40,11 @@ export BUYERSIGHT_PACKAGES_DIR=$WORKSPACE_DIR
 
 # Aliases
 alias sudo='sudo '
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/henry/google-cloud-sdk/path.zsh.inc' ]; then . '/home/henry/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/henry/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/henry/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/.poetry/bin:$HOME/.local/bin:$PATH"
