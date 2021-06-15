@@ -1,7 +1,6 @@
 profile {
-    output "Lenovo Group Limited LEN L28u-30 U1B3NWVF" enable mode 3840x2160@60Hz position 0,4300
+    output DVI-D-1 enable mode 3840x2160@30Hz position 0,4300
 
-    output "Dell Inc. Dell S2716DG #ASPlgu/8gjbd" enable mode 2560x1440@144Hz position 3840,4300
+    output HDMI-A-1 enable mode 2560x1440@60Hz position 3840,4300
 
-    output eDP-1 disable
 }
