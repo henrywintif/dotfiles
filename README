@@ -1,6 +1,13 @@
 # Henry's Dotfiles
 ## How-To: use with stow
+### Init
 1. clone into `~/workspace`.
 2. `cd ~/workspace/dotfiles`
 3. `stow . -t ~`
 
+### Restow
+Stow makes links from config locations to this directory. 
+If you have stowed and then edit the files in this directory, no action is needed for the programs that rely on these config files to see the changes.
+If, however, you add a new config file to this repo, it will not be added to your home folder.
+To add it, you must "restow". The command to do this is:
+`stow -R . -t ~`.
