@@ -12,9 +12,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose command-time)
+plugins=(git docker docker-compose timer)
+
 # Plugin settings
-ZSH_COMMAND_TIME_EXCLUDE=(vim mcedit)
+TIMER_THRESHOLD=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,15 +37,8 @@ PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info_wrapper)'
 
 # Environment variables
 export WORKSPACE_DIR=$HOME/workspace
-export BUYERSIGHT_PACKAGES_DIR=$WORKSPACE_DIR
 
 # Aliases
 alias sudo='sudo '
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/henry/google-cloud-sdk/path.zsh.inc' ]; then . '/home/henry/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/henry/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/henry/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.poetry/bin:$HOME/.local/bin:$PATH"
