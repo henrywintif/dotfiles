@@ -27,8 +27,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## 
-zinit load gretzky/auto-color-ls
-
 zinit load zsh-users/zsh-syntax-highlighting
 
 zinit load zsh-users/zsh-autosuggestions
