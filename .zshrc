@@ -19,8 +19,36 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-### Added by Henry
+#Plugins
+## powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+## 
+zinit load gretzky/auto-color-ls
+
+zinit load zsh-users/zsh-syntax-highlighting
+
+zinit load zsh-users/zsh-autosuggestions
+
+##oh-my-zsh stuff
+###libs
+zi snippet OMZL::functions.zsh
+zi snippet OMZL::key-bindings.zsh
+zi snippet OMZL::completion.zsh
+zi snippet OMZL::clipboard.zsh
+zi snippet OMZL::termsupport.zsh
+zi snippet OMZL::history.zsh
+###
+zi snippet OMZP::tmux
+zi snippet OMZP::colored-man-pages
+zi snippet OMZP::colorize
+zi snippet OMZP::command-not-found
+zi snippet OMZP::copybuffer
+zi snippet OMZP::copypath
+zi snippet OMZP::copyfile
+zi snippet OMZP::command-not-found
+zi snippet OMZP::safe-paste
+zi snippet OMZP::web-search
