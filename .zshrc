@@ -34,19 +34,24 @@ zinit load zsh-users/zsh-autosuggestions
 ##oh-my-zsh stuff
 ###libs
 zi snippet OMZL::functions.zsh
-zi snippet OMZL::key-bindings.zsh
 zi snippet OMZL::completion.zsh
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::termsupport.zsh
 zi snippet OMZL::history.zsh
+zi snippet OMZL::compfix.zsh
+zi snippet OMZL::key-bindings.zsh
+#zi snippet OMZL::history.zsh
+#zi snippet OMZL::history.zsh
+#zi snippet OMZL::history.zsh
+#zi snippet OMZL::history.zsh
 ###
-zi snippet OMZP::tmux
-zi snippet OMZP::colored-man-pages
-zi snippet OMZP::colorize
-zi snippet OMZP::command-not-found
-zi snippet OMZP::copybuffer
-zi snippet OMZP::copypath
-zi snippet OMZP::copyfile
-zi snippet OMZP::command-not-found
-zi snippet OMZP::safe-paste
-zi snippet OMZP::web-search
+#zi snippet OMZP::tmux
+#zi snippet OMZP::colored-man-pages
+#zi snippet OMZP::colorize
+#zi snippet OMZP::command-not-found
+#zi snippet OMZP::copybuffer
+#zi snippet OMZP::copypath
+#zi snippet OMZP::copyfile
+#zi snippet OMZP::command-not-found
+#zi snippet OMZP::safe-paste
+#zi snippet OMZP::web-search
