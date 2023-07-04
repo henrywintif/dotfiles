@@ -19,6 +19,8 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+zinit light-mode for zdharma-continuum/zinit-annex-bin-gem-node
+
 #Plugins
 ## powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -30,6 +32,11 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit load zsh-users/zsh-syntax-highlighting
 
 zinit load zsh-users/zsh-autosuggestions
+
+zi load lukechilds/zsh-better-npm-completion
+
+zi for \
+    https://github.com/junegunn/fzf/raw/master/shell/{'completion','key-bindings'}.zsh
 
 ##oh-my-zsh stuff
 ###libs
@@ -45,7 +52,8 @@ zi snippet OMZL::key-bindings.zsh
 #zi snippet OMZL::history.zsh
 #zi snippet OMZL::history.zsh
 ###
-#zi snippet OMZP::tmux
+zi snippet OMZP::tmux
+zi snippet OMZP::npm
 #zi snippet OMZP::colored-man-pages
 #zi snippet OMZP::colorize
 #zi snippet OMZP::command-not-found
